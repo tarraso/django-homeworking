@@ -1,0 +1,14 @@
+<form method="POST">
+    {% csrf_token %}
+    Name:
+    <input name="name" required/>
+    <ul>
+    {% for sentence in sentences %}
+        <li>{{sentence.get_mixed}}
+            <input name="sentence_{{sentence.id}}">
+            </input>
+        </li>
+    {% endfor %}
+    </ul>
+    <input type="submit" val="Submit">
+</form>
